@@ -1,0 +1,74 @@
+(1) BASIC DATA INFORMATION:
+
+    The loaded set includes abundance (or frequency) data from 4 communities
+    and a total of 58 distinct species.
+
+   (Number of observed individuals in each community)       n1 = 168 
+                                                            n2 = 250 
+                                                            n3 = 106 
+                                                            n4 = 252 
+
+   (Number of observed species in one community)            D1 = 26 
+                                                            D2 = 28 
+                                                            D3 = 23 
+                                                            D4 = 37 
+
+   (Number of observed shared species in two communities)   D12 = 15 
+                                                            D13 = 16 
+                                                            D14 = 19 
+                                                            D23 = 13 
+                                                            D24 = 13 
+                                                            D34 = 15 
+
+   (Bootstrap replications for s.e. estimate)               200 
+
+(2) ESTIMATION OF OVERLAP MEASURE IN 4 COMMUNITIES:
+
+    Estimator      Estimate      Est_s.e.      95% Confidence Interval
+
+    C04            0.655         0.027         ( 0.601 , 0.709 )
+    C14            0.194         0.035         ( 0.125 , 0.263 )
+    C14*           0.212         0.017         ( 0.179 , 0.246 )
+    C24            0.626         0.037         ( 0.556 , 0.703 )
+
+    C04 : A similarity measure of comparing 4 communities using empirical method.
+    C14 : A similarity measure of comparing 4 communities based on equal sample size among all communities.
+    C14*: A similarity measure of comparing 4 communities based on equal-effort sample size among all communities.
+    C24 : A similarity measure of comparing 4 communities based on shared information between any two communities.
+    
+    Confidence Interval: Based on an improved bootstrap percentile method. (recommend for use in the case when 
+                         similarity is close to 0 or 1 ) 
+
+    Pairwise Comparison:
+
+    Estimator      Estimate      Est_s.e.      95% Confidence Interval
+
+    C02(1,2)       0.556         0.061         ( 0.437 , 0.674 )
+    C02(1,3)       0.653         0.051         ( 0.553 , 0.753 )
+    C02(1,4)       0.603         0.048         ( 0.510 , 0.697 )
+    C02(2,3)       0.510         0.058         ( 0.397 , 0.623 )
+    C02(2,4)       0.400         0.045         ( 0.312 , 0.488 )
+    C02(3,4)       0.500         0.042         ( 0.417 , 0.583 )
+
+    Average Pairwise = 0.537 
+
+    If the lower bound is less than 0, it is replaced by 0; if the upper bound
+       is greater than 1, it is replaced by 1.
+
+    Similarity Matrix: 
+
+    C02(i,j)   	1 	2 	3 	4 	
+        1 	1.000 	0.556 	0.653 	0.603 	
+        2 		1.000 	0.510 	0.400 	
+        3 			1.000 	0.500 	
+        4 				1.000 	
+
+   References:
+   
+   Chao, A., Jost, L., Chiang, S. C., Jiang, Y.-H. and Chazdon, R. (2008). A Two-
+   stage probabilistic approach to multiple-community similarity indices. 
+   Biometrics, 64, 1178-1186.
+   
+   Jost, L. (2008). GST and its relatives do not measure differentiation. Molecular
+   Ecology, 17, 4015-4026.
+   
