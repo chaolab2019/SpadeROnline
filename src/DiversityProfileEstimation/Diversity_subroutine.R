@@ -140,7 +140,7 @@ SpecAbunAce<- function(data, k=10, conf=0.95)
     j <- c(1:k)
     a1 <- sum(sapply(j, function(j)j*(j - 1)*f(j, x)))
     a2 <- sum(sapply(j, function(j)j*f(j, x)))
-    if (C_rare != 0)
+    if (C_rare != 0 & a2 >1)
     {
       gamma_rare_hat_square <- max(D_rare/C_rare*a1/a2/(a2 - 1) - 1, 0)
       gamma_rare_1_square <- max(gamma_rare_hat_square*(1 + (1 - C_rare)/C_rare*a1/(a2 - 1)), 0)
@@ -173,7 +173,7 @@ SpecAbunAce<- function(data, k=10, conf=0.95)
     j <- c(1:k)
     a1 <- sum(sapply(j, function(j)j*(j - 1)*f(j, x)))
     a2 <- sum(sapply(j, function(j)j*f(j, x)))
-    if (C_rare != 0)
+    if (C_rare != 0 & a2 >1)
     {
       gamma_rare_hat_square <- max(D_rare/C_rare*a1/a2/(a2 - 1) - 1, 0)
     }
@@ -281,7 +281,7 @@ SpecAbunAce1 <-function(data ,k=10, conf=0.95)
     j <- c(1:k)
     a1 <- sum(sapply(j, function(j)j*(j - 1)*f(j, x)))
     a2 <- sum(sapply(j, function(j)j*f(j, x)))
-    if (C_rare != 0){
+    if (C_rare != 0 & a2 >1){
       gamma_rare_hat_square <- max(D_rare/C_rare*a1/a2/(a2 - 1) - 1, 0)
       gamma_rare_1_square <- max(gamma_rare_hat_square*(1 + (1 - C_rare)/C_rare*a1/(a2 - 1)), 0)
     }else{
@@ -310,7 +310,7 @@ SpecAbunAce1 <-function(data ,k=10, conf=0.95)
     j <- c(1:k)
     a1 <- sum(sapply(j, function(j)j*(j - 1)*f(j, x)))
     a2 <- sum(sapply(j, function(j)j*f(j, x)))
-    if (C_rare != 0){
+    if (C_rare != 0 & a2 >1){
       gamma_rare_hat_square <- max(D_rare/C_rare*a1/a2/(a2 - 1) - 1, 0)
       gamma_rare_1_square <- max(gamma_rare_hat_square*(1 + (1 - C_rare)/C_rare*a1/(a2 - 1)), 0)
     }else{

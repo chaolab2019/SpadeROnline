@@ -121,7 +121,7 @@ SpecAbuniChao1 <-
     j <- rep(sort(unique(xx)),length(unique(xx)))       # all combination
     
   
-    if (f1 - f2*f3/2/f4 > 0 & f3 != 0){
+    if (is.nan(f1 - f2*f3/2/f4) == F & f1 - f2*f3/2/f4 > 0 & f3 != 0){
       var_iChao1 <- sum(mapply(function(i, j)diff(i, x)*diff(j, x)*COV.f(i, j), i, j))
     } else {
       var_iChao1 <- var_Chao1
